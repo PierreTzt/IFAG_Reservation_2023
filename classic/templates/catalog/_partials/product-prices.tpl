@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {if $product.show_price}
-  <div class="product-prices js-product-prices">
+  {*<div class="product-prices js-product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
         <div class="product-discount">
@@ -82,5 +82,5 @@
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
-  </div>
+  </div>*}
 {/if}
