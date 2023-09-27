@@ -26,8 +26,8 @@
   {if !$configuration.is_catalog}
     <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
 
-    {*
     {block name='product_quantity'}
+      {*
       <div class="product-quantity clearfix">
         <div class="qty">
           <input
@@ -47,7 +47,8 @@
             aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
           >
         </div>
-      *}
+        *}
+      
 
         <div class="add">
           <button
