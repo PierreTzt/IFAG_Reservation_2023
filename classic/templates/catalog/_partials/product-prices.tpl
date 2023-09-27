@@ -38,14 +38,6 @@
         class="product-price h5 {if $product.has_discount}has-discount{/if}">
 
         <div class="current-price">
-          <span class='current-price-value' content="{$product.rounded_display_price}">
-            {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='product_sheet'}{/capture}
-            {if '' !== $smarty.capture.custom_price}
-              {$smarty.capture.custom_price nofilter}
-            {else}
-              {$product.price}
-            {/if}
-          </span>
 
           {if $product.has_discount}
             {if $product.discount_type === 'percentage'}
@@ -90,28 +82,5 @@
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
 
-    <div class="tax-shipping-delivery-label">
-      {if !$configuration.taxes_enabled}
-        {l s='No tax' d='Shop.Theme.Catalog'}
-      {elseif $configuration.display_taxes_label}
-        {$product.labels.tax_long}
-      {/if}
-      {hook h='displayProductPriceBlock' product=$product type="price"}
-      {hook h='displayProductPriceBlock' product=$product type="after_price"}
-      {if $product.is_virtual	== 0}
-        {if $product.additional_delivery_times == 1}
-          {if $product.delivery_information}
-            <span class="delivery-information">{$product.delivery_information}</span>
-          {/if}
-        {elseif $product.additional_delivery_times == 2}
-          {if $product.quantity >= $product.quantity_wanted}
-            <span class="delivery-information">{$product.delivery_in_stock}</span>
-          {* Out of stock message should not be displayed if customer can't order the product. *}
-          {elseif $product.add_to_cart_url}
-            <span class="delivery-information">{$product.delivery_out_stock}</span>
-          {/if}
-        {/if}
-      {/if}
-    </div>
   </div>
 {/if}
