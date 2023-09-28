@@ -63,12 +63,6 @@
           {/if}
         </div>
       {/if}
-      <div class="current-price">
-        <span class="price">{$product.price}</span>
-        {if $product.unit_price_full}
-          <div class="unit-price-cart">{$product.unit_price_full}</div>
-        {/if}
-      </div>
       {hook h='displayProductPriceBlock' product=$product type="unit_price"}
     </div>
 
@@ -130,34 +124,8 @@
       <div class="col-md-10 col-xs-6">
         <div class="row">
           <div class="col-md-6 col-xs-6 qty">
-            {if !empty($product.is_gift)}
-              <span class="gift-quantity">{$product.quantity}</span>
-            {else}
-              <input
-                class="js-cart-line-product-quantity"
-                data-down-url="{$product.down_quantity_url}"
-                data-up-url="{$product.up_quantity_url}"
-                data-update-url="{$product.update_quantity_url}"
-                data-product-id="{$product.id_product}"
-                type="number"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                value="{$product.quantity}"
-                name="product-quantity-spin"
-                aria-label="{l s='%productName% product quantity field' sprintf=['%productName%' => $product.name] d='Shop.Theme.Checkout'}"
-              />
-            {/if}
           </div>
           <div class="col-md-6 col-xs-2 price">
-            <span class="product-price">
-              <strong>
-                {if !empty($product.is_gift)}
-                  <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
-                {else}
-                  {$product.total}
-                {/if}
-              </strong>
-            </span>
           </div>
         </div>
       </div>
