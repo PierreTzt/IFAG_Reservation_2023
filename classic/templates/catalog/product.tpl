@@ -85,6 +85,10 @@
               <div id="product-description-short-{$product.id}" class="product-description">{$product.description_short nofilter}</div>
             {/block}
 
+            {block name='product_quantities'}
+                <div class="product-description"> {l s='In stock' d='Shop.Theme.Catalog'} {$product.quantity} {$product.quantity_label}</div>
+            {/block}
+
             {if $product.is_customizable && count($product.customizations.fields)}
               {block name='product_customization'}
                 {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
