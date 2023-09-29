@@ -383,13 +383,13 @@ class OrderControllerCore extends FrontController
                 $this->makeLoginForm(),
                 $this->makeCustomerForm()
             ))
-            /*->addStep(new CheckoutAddressesStep(
+            ->addStep(new CheckoutAddressesStep(
                 $this->context,
                 $translator,
                 $this->makeAddressForm()
-            ))*/;
+            ));
 
-        if (!$this->context->cart->isVirtualCart()) {
+        if ($this->context->cart->isVirtualCart()) {
             $checkoutDeliveryStep = new CheckoutDeliveryStep(
                 $this->context,
                 $translator
