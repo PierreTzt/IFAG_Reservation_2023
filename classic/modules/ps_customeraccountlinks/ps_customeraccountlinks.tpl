@@ -49,15 +49,6 @@
         {if !$configuration.is_catalog}
           <li><a href="{$urls.pages.history}" title="{l s='Orders' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Orders' d='Shop.Theme.Customeraccount'}</a></li>
         {/if}
-        {if !$configuration.is_catalog}
-          <li><a href="{$urls.pages.order_slip}" title="{l s='Credit slips' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Credit slips' d='Shop.Theme.Customeraccount'}</a></li>
-        {/if}
-        {if $configuration.voucher_enabled && !$configuration.is_catalog}
-          <li><a href="{$urls.pages.discount}" title="{l s='Vouchers' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Vouchers' d='Shop.Theme.Customeraccount'}</a></li>
-        {/if}
-        {if $configuration.return_enabled && !$configuration.is_catalog}
-          <li><a href="{$urls.pages.order_follow}" title="{l s='Merchandise returns' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Merchandise returns' d='Shop.Theme.Customeraccount'}</a></li>
-        {/if}
         {hook h='displayMyAccountBlock'}
         <li><a href="{$urls.actions.logout}" title="{l s='Log me out' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Sign out' d='Shop.Theme.Actions'}</a></li>
       {else}
