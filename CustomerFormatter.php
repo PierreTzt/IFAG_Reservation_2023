@@ -139,17 +139,19 @@ class CustomerFormatterCore implements FormFormatterInterface
                 $this->translator->trans('Only letters and the dot (.) character, followed by a space, are allowed.', [], 'Shop.Forms.Help')
             );
 
-        if (Configuration::get('PS_B2B_ENABLE')) {
-            $format['company'] = (new FormField())
-                ->setName('company')
-                ->setType('text')
-                ->setLabel($this->translator->trans(
-                    'Company',
-                    [],
-                    'Shop.Forms.Labels'
-                ))
-                ->setRequired(true);
-        }
+            /** 
+        *if (Configuration::get('PS_B2B_ENABLE')) {
+        *    $format['company'] = (new FormField())
+        *        ->setName('company')
+        *        ->setType('text')
+        *        ->setLabel($this->translator->trans(
+        *            'Company',
+        *            [],
+        *            'Shop.Forms.Labels'
+        *        ))
+        *        ->setRequired(true);
+        *}
+            */
 
         $format['email'] = (new FormField())
             ->setName('email')
